@@ -1,14 +1,21 @@
 import SingleBook from "./SingleBook";
 import { Col } from "react-bootstrap";
+import { Component } from "react";
 
-const BookList = props => {
-  return props.books.map((book, i) => {
+class BookList extends Component {
+  render() {
     return (
-      <Col md={4} lg={3} className="mt-5">
-        <SingleBook key={i} book={book} />
-      </Col>
+      <>
+        {this.props.books.map((book, i) => {
+          return (
+            <Col md={4} lg={3} className="mt-5">
+              <SingleBook key={`book-${i}`} book={book} />
+            </Col>
+          );
+        })}
+      </>
     );
-  });
-};
+  }
+}
 
 export default BookList;

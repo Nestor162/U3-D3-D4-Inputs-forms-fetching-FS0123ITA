@@ -6,13 +6,16 @@ import Welcome from "./components/Welcome";
 import MyNav from "./components/MyNav";
 import BookList from "./components/BookList";
 import fantasy from "./data/fantasy.json";
+import InputSearch from "./components/InputSearch";
 
 function App() {
   return (
     <div className="App position-relative bg-light">
       <MyNav />
       <Welcome />
+
       <Container>
+        <InputSearch />
         <Row>
           <BookList books={fantasy} />
         </Row>
